@@ -1,0 +1,4 @@
+[
+  "Write a long descriptive caption for this image in a formal tone.",
+  "This is a photograph capturing the illuminated cable-stayed bridge at sunset. The bridge, with its sleek, modern design, spans a calm body of water, reflecting the vibrant orange and purple hues of the sky. The sky transitions from deep purple at the top to a warm orange near the horizon. The bridge's cables and towers are silhouetted against the colorful sky. In the background, there are rolling hills and dense forests, with scattered lights from distant buildings. The overall scene exudes a serene and picturesque atmosphere."
+]
