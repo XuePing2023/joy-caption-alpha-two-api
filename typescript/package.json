@@ -16,5 +16,8 @@
     "@gradio/client": "^1.8.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "sharp": "^0.33.5"
   }
 }
