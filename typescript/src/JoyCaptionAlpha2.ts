@@ -64,7 +64,7 @@ export  class JoyCaptionAlpha2 {
 
         const { Client, handle_file } = await importDynamic('@gradio/client');
 
-        const client = await Client.connect("fancyfeast/joy-caption-alpha-two");
+        const client = await Client.connect("fancyfeast/joy-caption-alpha-two",{ hf_token: "hf_..." });
         const result = await client.predict("/stream_chat", {
             input_image: handle_file(localFilepath),
             caption_type: "Descriptive",
