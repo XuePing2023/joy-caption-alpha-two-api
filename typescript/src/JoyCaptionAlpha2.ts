@@ -86,7 +86,7 @@ export  class JoyCaptionAlpha2 {
 
             const { Client, handle_file } = await importDynamic('@gradio/client');
 
-            const client = await Client.connect("fancyfeast/joy-caption-alpha-two",{ hf_token: "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" });
+            const client = await Client.connect("fancyfeast/joy-caption-alpha-two",{ hf_token: "" });
 
             for (const fileName of files) {
                 // 检查文件是否为 .jpg 或 .png
