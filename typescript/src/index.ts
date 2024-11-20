@@ -81,10 +81,10 @@ function main() {
     //     }
     // });
 
-    // let joy2 = new JoyCaptionAlpha2();
-    // joy2.run();
-    let scaleImage = new ScaleImages();
-    scaleImage.run();
+    let joy2 = new JoyCaptionAlpha2();
+    joy2.run();
+    // let scaleImage = new ScaleImages();
+    // scaleImage.run();
 }
 
 main();

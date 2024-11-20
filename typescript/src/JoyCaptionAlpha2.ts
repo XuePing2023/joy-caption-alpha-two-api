@@ -57,14 +57,11 @@ export  class JoyCaptionAlpha2 {
         }
     }
 
-    async sendClientStreamChat(localFilepath: string) {
+    async sendClientStreamChat(localFilepath: string,client,handle_file) {
         // const response_0 = await fetch("https://raw.githubusercontent.com/gradio-app/gradio/main/test/test_files/bus.png");
         // const response_0 = await fetch("https://raw.githubusercontent.com/gradio-app/gradio/main/test/test_files/bus.png");
         // const exampleImage = await response_0.blob();
 
-        const { Client, handle_file } = await importDynamic('@gradio/client');
-
-        const client = await Client.connect("fancyfeast/joy-caption-alpha-two",{ hf_token: "hf_..." });
         const result = await client.predict("/stream_chat", {
             input_image: handle_file(localFilepath),
             caption_type: "Descriptive",
@@ -87,6 +84,10 @@ export  class JoyCaptionAlpha2 {
                 return;
             }
 
+            const { Client, handle_file } = await importDynamic('@gradio/client');
+
+            const client = await Client.connect("fancyfeast/joy-caption-alpha-two",{ hf_token: "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" });
+
             for (const fileName of files) {
                 // 检查文件是否为 .jpg 或 .png
                 let fileExt = path.extname(fileName);
@@ -96,11 +97,12 @@ export  class JoyCaptionAlpha2 {
 
                     // 处理图片并调用 Gradio 客户端
                     try {
-                        const result = await this.sendClientStreamChat(filePath);
+
+                        const result = await this.sendClientStreamChat(filePath,client,handle_file);
 
                         // 将结果写入对应的 .txt 文件
                         if (result && result[1]) {
-                            fs.writeFileSync(txtFilePath, JSON.stringify(result[1], null, 2), "utf-8");
+                            fs.writeFileSync(txtFilePath, result[1], "utf-8");
                         } else {
                             console.log(`error result for ${fileName}`);
                         }
